@@ -1,0 +1,34 @@
+h4_module(scene
+  DEPENDS core graphics model
+  PRIVATE_DEPENDS assets formats
+  SOURCES
+    map_armies.cpp
+    map_assets.cpp
+    map_assets.hpp
+    map_edges.cpp
+    map_edges.hpp
+    map_frame.cpp
+    map_frame.hpp
+    map_hover.hpp
+    map_lattice.cpp
+    map_lattice.hpp
+    map_objects.cpp
+    map_objects.hpp
+    map_objects_detail.hpp
+    map_objects_place.cpp
+    map_path.cpp
+    map_path.hpp
+    map_pick.cpp
+    map_pick.hpp
+    map_render.cpp
+    map_render.hpp
+    map_render_passes.cpp
+    map_shroud.cpp
+    map_shroud.hpp
+    map_terrain_art.cpp
+    map_terrain_art.hpp
+    mini_map.cpp
+    mini_map.hpp
+    viewer_shroud.cpp
+    viewer_shroud.hpp
+)

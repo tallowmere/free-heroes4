@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 3.28)
+project(openh4
+        VERSION 0.1.0
+        DESCRIPTION "Open reimplementation of the Heroes of Might & Magic IV engine"
+        LANGUAGES CXX)
+
+if(APPLE)
+  enable_language(OBJCXX)
+endif()
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
+option(H4_BUILD_PLATFORM "Build the SDL3 platform backend and the game"    ON)
+option(H4_SANITIZE       "Build with AddressSanitizer + UBSan"             OFF)
+option(H4_TSAN           "Build with ThreadSanitizer"                      OFF)
+option(H4_WARNINGS_AS_ERRORS "Treat compiler warnings as errors"           ON)
+
+include(H4Policy)
+include(H4Dependencies)
+include(H4Module)
+
+add_subdirectory(src/h4/core)
+add_subdirectory(src/h4/io)
+add_subdirectory(src/h4/net)
+if(APPLE)
+  add_subdirectory(src/h4/net/apple)
+endif()
+add_subdirectory(src/h4/formats)
+add_subdirectory(src/h4/graphics)
+add_subdirectory(src/h4/model)
+add_subdirectory(src/h4/rules)
+add_subdirectory(src/h4/ai)
+add_subdirectory(src/h4/assets)
+add_subdirectory(src/h4/scene)
+add_subdirectory(src/h4/ui)
+add_subdirectory(src/h4/cursor)
+add_subdirectory(src/h4/screens)
+add_subdirectory(src/h4/platform)
+add_subdirectory(src/h4/app)
+
+if(NOT IOS)
+  add_subdirectory(apps/h4-tool)
+endif()
+if(H4_BUILD_PLATFORM)
+  add_subdirectory(src/h4/platform/sdl3)
+  add_subdirectory(apps/openh4)
+endif()

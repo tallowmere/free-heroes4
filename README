@@ -1,0 +1,38 @@
+openh4
+======
+
+An open reimplementation of the Heroes of Might and Magic IV engine.
+
+This repository holds the engine and its programs only. No game data is
+included: you need your own copy of Heroes of Might and Magic IV from GOG.
+On first start, openh4 can use an installer you already downloaded or sign
+in to GOG and fetch it for you.
+
+The project is unfinished.
+
+
+Building
+--------
+
+Requirements: CMake 3.28 or newer, Ninja, a C++23 compiler, zlib, liblzma
+and SDL3. Without SDL3 only the engine libraries and h4-tool are built.
+
+    cmake --preset release
+    cmake --build --preset release
+
+Other presets (dev, debug, asan, tsan, xcode-macos, xcode-ios) are listed
+in CMakePresets.json.
+
+
+Layout
+------
+
+    src/h4/       the engine, one static library per module
+    apps/openh4/  the game
+    apps/h4-tool/ command-line tool for inspecting and rendering game data
+
+
+License
+-------
+
+GNU General Public License, version 3. See LICENSE.

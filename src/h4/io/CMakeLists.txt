@@ -1,0 +1,33 @@
+h4_module(io
+  DEPENDS core
+  PRIVATE_LIBS ZLIB::ZLIB LibLZMA::LibLZMA
+  SOURCES
+    archive.cpp
+    archive.hpp
+    archive_chain.cpp
+    archive_chain.hpp
+    compression.cpp
+    compression.hpp
+    file_read.cpp
+    file_read.hpp
+    file_write.cpp
+    file_write.hpp
+    inno/gog_layer.cpp
+    inno/gog_layer.hpp
+    inno/installer.cpp
+    inno/installer.hpp
+    inno/installer_extract.cpp
+    inno/installer_extract.hpp
+    inno/managed_install.cpp
+    inno/managed_install.hpp
+    inno/setup_entries.cpp
+    inno/setup_entries.hpp
+    inno/setup_loader.cpp
+    inno/setup_loader.hpp
+    lzma.cpp
+    mapped_file.cpp
+    mapped_file.hpp
+    png_writer.cpp
+    png_writer.hpp
+    resource_source.hpp
+)

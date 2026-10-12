@@ -1,0 +1,75 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 28, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "dev",
+      "displayName": "Development (RelWithDebInfo)",
+      "inherits": "base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "RelWithDebInfo" }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "inherits": "base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "asan",
+      "displayName": "Debug + ASan/UBSan",
+      "inherits": "base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "H4_SANITIZE": "ON" }
+    },
+    {
+      "name": "tsan",
+      "displayName": "Debug + TSan",
+      "inherits": "base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "H4_TSAN": "ON" }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "inherits": "base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "xcode-macos",
+      "displayName": "Xcode project, macOS app",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "26.0",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY": "-"
+      }
+    },
+    {
+      "name": "xcode-ios",
+      "displayName": "Xcode project, iOS and iPadOS app",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_SYSTEM_NAME": "iOS",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "18.0",
+        "CMAKE_OSX_ARCHITECTURES": "arm64"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "dev",     "configurePreset": "dev" },
+    { "name": "debug",   "configurePreset": "debug" },
+    { "name": "asan",    "configurePreset": "asan" },
+    { "name": "tsan",    "configurePreset": "tsan" },
+    { "name": "release", "configurePreset": "release" },
+    { "name": "xcode-macos", "configurePreset": "xcode-macos", "configuration": "Debug" },
+    { "name": "xcode-ios-simulator", "configurePreset": "xcode-ios", "configuration": "Debug",
+      "nativeToolOptions": [ "-sdk", "iphonesimulator" ] },
+    { "name": "xcode-ios", "configurePreset": "xcode-ios", "configuration": "Debug",
+      "nativeToolOptions": [ "-sdk", "iphoneos", "-allowProvisioningUpdates" ] }
+  ]
+}

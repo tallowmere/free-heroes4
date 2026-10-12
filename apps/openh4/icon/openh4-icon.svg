@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later
+     openh4's icon: a heraldic shield over a crossed sword and staff (might
+     and magic) under a four-pointed star (the fourth), against a dusk sky.
+     Original art, drawn for the port. The surfaces are lit from the top left
+     through SVG filters: hammered gold, worn leather, brushed steel, wood
+     grain, painted clouds, film grain, for the painted, pre-rendered look
+     of the game's own art. Full-bleed 1024 square, the source of every icon
+     size (tools/make_icons.sh renders it with Chrome). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- The sky: night above, a low amber dusk behind the hills. -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120f17"/>
+      <stop offset="0.3" stop-color="#241b26"/>
+      <stop offset="0.55" stop-color="#553222"/>
+      <stop offset="0.72" stop-color="#a5602a"/>
+      <stop offset="0.84" stop-color="#dc9a48"/>
+      <stop offset="1" stop-color="#e8b566"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="512" cy="560" r="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffcf7a" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#c8742a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c8742a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="512" cy="500" r="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+
+    <!-- Antique gold, dark in the middle so the bevel's light reads. -->
+    <linearGradient id="gold" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#f3d88a"/>
+      <stop offset="0.35" stop-color="#c28c33"/>
+      <stop offset="0.6" stop-color="#7c5317"/>
+      <stop offset="0.8" stop-color="#c9973e"/>
+      <stop offset="1" stop-color="#5e3c0e"/>
+    </linearGradient>
+    <linearGradient id="goldLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6df98"/>
+      <stop offset="1" stop-color="#c8913a"/>
+    </linearGradient>
+    <linearGradient id="goldDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9a6a24"/>
+      <stop offset="1" stop-color="#4e320c"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#9c2a1c"/>
+      <stop offset="0.55" stop-color="#6c1710"/>
+      <stop offset="1" stop-color="#360907"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e4e2da"/>
+      <stop offset="0.5" stop-color="#a7a49b"/>
+      <stop offset="0.51" stop-color="#6d6a63"/>
+      <stop offset="1" stop-color="#3f3d39"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8f6035"/>
+      <stop offset="0.5" stop-color="#5f3a1a"/>
+      <stop offset="1" stop-color="#2c170a"/>
+    </linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3620"/>
+      <stop offset="1" stop-color="#22120a"/>
+    </linearGradient>
+    <!-- The orb: deep glass, bright at its heart, dark at its rim. -->
+    <radialGradient id="orb" cx="0.5" cy="0.56" r="0.55">
+      <stop offset="0" stop-color="#d6fbff"/>
+      <stop offset="0.25" stop-color="#5cc8f2"/>
+      <stop offset="0.6" stop-color="#1a5fb0"/>
+      <stop offset="1" stop-color="#071a45"/>
+    </radialGradient>
+    <radialGradient id="orbRim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.62" stop-color="#020a1e" stop-opacity="0"/>
+      <stop offset="0.9" stop-color="#020a1e" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#020a1e" stop-opacity="0.8"/>
+    </radialGradient>
+    <radialGradient id="orbGlow">
+      <stop offset="0" stop-color="#8fdcff" stop-opacity="0.85"/>
+      <stop offset="0.35" stop-color="#4aa2e8" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#4aa2e8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Painted clouds: low-frequency noise thresholded into soft shapes. -->
+    <filter id="cloudsDark" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0032 0.0105" numOctaves="5" seed="11"/>
+      <feColorMatrix type="matrix"
+                     values="0 0 0 0 0.10  0 0 0 0 0.07  0 0 0 0 0.09  3.4 0 0 0 -1.35"/>
+    </filter>
+    <filter id="cloudsLit" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0032 0.0105" numOctaves="5" seed="11"/>
+      <feColorMatrix type="matrix"
+                     values="0 0 0 0 0.86  0 0 0 0 0.52  0 0 0 0 0.26  3.4 0 0 0 -1.45"/>
+    </filter>
+
+    <!-- Rock: the hills' faces, lit from the left. -->
+    <filter id="rock" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.03" numOctaves="4" seed="3" result="n"/>
+      <feDiffuseLighting in="n" surfaceScale="9" diffuseConstant="1.05" lighting-color="#ffffff" result="d">
+        <feDistantLight azimuth="200" elevation="38"/>
+      </feDiffuseLighting>
+      <feComposite in="SourceGraphic" in2="d" operator="arithmetic" k1="1.25" result="lit"/>
+      <feComposite in="lit" in2="SourceAlpha" operator="in"/>
+    </filter>
+
+    <!-- Hammered, bevelled gold: the shape's edges rounded (the blurred
+         alpha) and dented (noise), lit diffusely and with a hot specular. -->
+    <filter id="metal" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="round"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="dents"/>
+      <feComposite in="round" in2="dents" operator="arithmetic" k2="0.9" k3="0.1" result="bump"/>
+      <feDiffuseLighting in="bump" surfaceScale="10" diffuseConstant="1.15" lighting-color="#ffffff" result="diffuse">
+        <feDistantLight azimuth="225" elevation="42"/>
+      </feDiffuseLighting>
+      <feSpecularLighting in="bump" surfaceScale="10" specularConstant="1.2" specularExponent="18"
+                          lighting-color="#fff1c8" result="spec">
+        <feDistantLight azimuth="225" elevation="36"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="diffuse" operator="arithmetic" k1="1.35" result="lit"/>
+      <feComposite in="lit" in2="spec" operator="arithmetic" k2="1" k3="0.75" result="shine"/>
+      <feComposite in="shine" in2="SourceAlpha" operator="in"/>
+    </filter>
+
+    <!-- Worn leather over wood: a soft grain, a deep bevel at the rim, and
+         scuffs that catch a little light. -->
+    <filter id="hide" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16" result="round"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5" seed="9" result="grain"/>
+      <feTurbulence type="turbulence" baseFrequency="0.012 0.09" numOctaves="2" seed="21" result="scuff"/>
+      <feComposite in="grain" in2="scuff" operator="arithmetic" k2="0.7" k3="0.3" result="surface"/>
+      <feComposite in="round" in2="surface" operator="arithmetic" k2="0.78" k3="0.22" result="bump"/>
+      <feDiffuseLighting in="bump" surfaceScale="12" diffuseConstant="1.1" lighting-color="#ffffff" result="diffuse">
+        <feDistantLight azimuth="225" elevation="50"/>
+      </feDiffuseLighting>
+      <feSpecularLighting in="bump" surfaceScale="12" specularConstant="0.45" specularExponent="12"
+                          lighting-color="#ffd9b0" result="spec">
+        <feDistantLight azimuth="225" elevation="40"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="diffuse" operator="arithmetic" k1="1.3" result="lit"/>
+      <feComposite in="lit" in2="spec" operator="arithmetic" k2="1" k3="0.5" result="shine"/>
+      <feComposite in="shine" in2="SourceAlpha" operator="in"/>
+    </filter>
+
+    <!-- Brushed steel: streaks along the blade, a bright edge light. -->
+    <filter id="brushed" x="-20%" y="-5%" width="140%" height="110%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="round"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9 0.012" numOctaves="2" seed="4" result="streaks"/>
+      <feComposite in="round" in2="streaks" operator="arithmetic" k2="0.85" k3="0.15" result="bump"/>
+      <feSpecularLighting in="bump" surfaceScale="5" specularConstant="1.3" specularExponent="26"
+                          lighting-color="#ffffff" result="spec">
+        <feDistantLight azimuth="185" elevation="40"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="spec" operator="arithmetic" k2="1" k3="0.7" result="shine"/>
+      <feComposite in="shine" in2="SourceAlpha" operator="in"/>
+    </filter>
+
+    <!-- Wood grain along the staff. -->
+    <filter id="grain" x="-20%" y="-5%" width="140%" height="110%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="round"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.35 0.012" numOctaves="3" seed="8" result="fibres"/>
+      <feComposite in="round" in2="fibres" operator="arithmetic" k2="0.7" k3="0.3" result="bump"/>
+      <feDiffuseLighting in="bump" surfaceScale="5" diffuseConstant="1.2" lighting-color="#ffffff" result="diffuse">
+        <feDistantLight azimuth="200" elevation="45"/>
+      </feDiffuseLighting>
+      <feComposite in="SourceGraphic" in2="diffuse" operator="arithmetic" k1="1.3" result="lit"/>
+      <feComposite in="lit" in2="SourceAlpha" operator="in"/>
+    </filter>
+
+    <!-- Film grain over the whole picture. -->
+    <filter id="film" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="2"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16"/>
+      <feOffset dx="10" dy="20"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.7"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Wisps of light turning inside the orb. -->
+    <filter id="wisps" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency="0.045" numOctaves="3" seed="17" result="n"/>
+      <feColorMatrix in="n" type="matrix"
+                     values="0 0 0 0 0.78  0 0 0 0 0.96  0 0 0 0 1  -3.2 0 0 0 1.05"/>
+      <feGaussianBlur stdDeviation="0.8"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <clipPath id="orbClip"><circle r="56"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <path id="shieldPath"
+          d="M300,300 Q512,272 724,300 L724,520 C724,684 622,784 512,840 C402,784 300,684 300,520 Z"/>
+    <path id="rimPath" fill-rule="evenodd"
+          d="M284,286 Q512,256 740,286 L740,520 C740,694 632,800 512,858 C392,800 284,694 284,520 Z
+             M316,314 Q512,288 708,314 L708,520 C708,674 612,768 512,822 C412,768 316,674 316,520 Z"/>
+    <linearGradient id="cloudFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.55" stop-color="#fff"/>
+      <stop offset="0.9" stop-color="#000"/>
+    </linearGradient>
+    <mask id="cloudMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="800">
+      <rect width="1024" height="800" fill="url(#cloudFade)"/>
+    </mask>
+    <clipPath id="skyClip"><rect width="1024" height="1024"/></clipPath>
+  </defs>
+
+  <!-- Dusk over a new world, lit from behind the shield. -->
+  <g clip-path="url(#skyClip)">
+    <rect width="1024" height="1024" fill="url(#sky)"/>
+    <g mask="url(#cloudMask)">
+      <rect y="-40" width="1024" height="840" filter="url(#cloudsLit)" transform="translate(0,12)" opacity="0.8"/>
+      <rect y="-40" width="1024" height="840" filter="url(#cloudsDark)" opacity="0.9"/>
+    </g>
+    <rect width="1024" height="1024" fill="url(#halo)"/>
+    <g fill="#fff0cf">
+      <circle cx="150" cy="120" r="2.5" opacity="0.7"/>
+      <circle cx="880" cy="96" r="2.5" opacity="0.6"/>
+      <circle cx="700" cy="60" r="2" opacity="0.5"/>
+      <circle cx="330" cy="70" r="2" opacity="0.5"/>
+    </g>
+    <path d="M0,840 L90,790 L170,815 L260,745 L350,800 L430,770 L520,800 L610,760 L700,815 L790,750 L890,805 L1024,760 L1024,1024 L0,1024 Z"
+          fill="#5a3f33" filter="url(#rock)" opacity="0.92"/>
+    <path d="M0,905 L130,860 L280,895 L450,852 L620,900 L800,858 L1024,895 L1024,1024 L0,1024 Z"
+          fill="#241915" filter="url(#rock)"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <!-- The staff (magic), orb up and to the left. -->
+    <g transform="translate(512,560) rotate(-40)">
+      <circle cx="0" cy="-490" r="175" fill="url(#orbGlow)"/>
+      <rect x="-15" y="-420" width="30" height="900" rx="12" fill="url(#wood)" filter="url(#grain)"/>
+      <g filter="url(#metal)">
+        <rect x="-20" y="452" width="40" height="32" rx="6" fill="url(#gold)"/>
+        <rect x="-20" y="330" width="40" height="18" rx="5" fill="url(#gold)"/>
+        <rect x="-21" y="-432" width="42" height="28" rx="6" fill="url(#gold)"/>
+      </g>
+      <!-- The head: a glass orb held in gold claws. -->
+      <g transform="translate(0,-490)">
+        <path d="M-34,44 Q0,78 34,44 L22,76 L-22,76 Z" fill="url(#gold)" filter="url(#metal)"/>
+        <g clip-path="url(#orbClip)">
+          <circle r="56" fill="url(#orb)"/>
+          <circle r="56" fill="#ffffff" filter="url(#wisps)" opacity="0.55"/>
+          <ellipse cx="6" cy="30" rx="40" ry="20" fill="#8fe6ff" opacity="0.55" filter="url(#soft)"/>
+          <circle r="56" fill="url(#orbRim)"/>
+        </g>
+        <ellipse cx="-18" cy="-28" rx="26" ry="13" fill="#ffffff" opacity="0.55" filter="url(#glow)"
+                 transform="rotate(-38 -18 -28)"/>
+        <circle cx="-26" cy="-31" r="4.5" fill="#ffffff"/>
+        <circle cx="22" cy="36" r="2.5" fill="#e6fbff" opacity="0.8"/>
+        <g fill="url(#gold)" filter="url(#metal)">
+          <path d="M-12,70 C-52,60 -74,22 -66,-20 C-62,-40 -50,-54 -36,-60
+                   C-48,-42 -56,-22 -54,-2 C-52,24 -36,48 -6,58 Z"/>
+          <path d="M-12,70 C-52,60 -74,22 -66,-20 C-62,-40 -50,-54 -36,-60
+                   C-48,-42 -56,-22 -54,-2 C-52,24 -36,48 -6,58 Z" transform="scale(-1,1)"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- The sword (might), point up and to the right. -->
+    <g transform="translate(512,560) rotate(40)">
+      <path d="M-25,300 L-25,-470 L0,-552 L25,-470 L25,300 Z" fill="url(#steel)" filter="url(#brushed)"/>
+      <path d="M-4,290 L-4,-470 L4,-470 L4,290 Z" fill="#3f3d39" opacity="0.55"/>
+      <g filter="url(#metal)">
+        <path d="M-116,296 Q-128,316 -108,334 L108,334 Q128,316 116,296 Z" fill="url(#gold)"/>
+        <circle cx="0" cy="454" r="30" fill="url(#gold)"/>
+      </g>
+      <rect x="-16" y="334" width="32" height="98" rx="6" fill="url(#leather)" filter="url(#grain)"/>
+      <g fill="#b98934" filter="url(#metal)">
+        <rect x="-17" y="352" width="34" height="7" rx="3"/>
+        <rect x="-17" y="380" width="34" height="7" rx="3"/>
+        <rect x="-17" y="408" width="34" height="7" rx="3"/>
+      </g>
+    </g>
+
+    <!-- The shield: leather over wood in a hammered gold rim. -->
+    <g>
+      <use href="#shieldPath" fill="url(#field)" filter="url(#hide)"/>
+      <use href="#rimPath" fill="url(#gold)" filter="url(#metal)"/>
+    </g>
+  </g>
+
+  <!-- The fourth: a faceted star in a ring, raised in gold. -->
+  <g transform="translate(512,548)" filter="url(#shadow)">
+    <g filter="url(#metal)">
+      <path fill-rule="evenodd" fill="url(#gold)"
+            d="M0,-98 A98,98 0 1,1 0,98 A98,98 0 1,1 0,-98 Z M0,-86 A86,86 0 1,0 0,86 A86,86 0 1,0 0,-86 Z"/>
+      <path d="M0,0 L0,-182 L-36,-36 Z" fill="url(#goldLight)"/>
+      <path d="M0,0 L0,-182 L36,-36 Z" fill="url(#goldDark)"/>
+      <path d="M0,0 L140,0 L36,-36 Z" fill="url(#goldLight)"/>
+      <path d="M0,0 L140,0 L36,36 Z" fill="url(#goldDark)"/>
+      <path d="M0,0 L0,182 L36,36 Z" fill="url(#goldLight)"/>
+      <path d="M0,0 L0,182 L-36,36 Z" fill="url(#goldDark)"/>
+      <path d="M0,0 L-140,0 L-36,36 Z" fill="url(#goldLight)"/>
+      <path d="M0,0 L-140,0 L-36,-36 Z" fill="url(#goldDark)"/>
+      <circle r="15" fill="#f3d88a"/>
+    </g>
+  </g>
+
+  <rect width="1024" height="1024" filter="url(#film)" opacity="0.1" style="mix-blend-mode:overlay"/>
+  <rect width="1024" height="1024" fill="url(#vignette)"/>
+</svg>

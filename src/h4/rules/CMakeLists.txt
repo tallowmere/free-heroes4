@@ -1,0 +1,42 @@
+h4_module(rules
+  DEPENDS core formats model
+  SOURCES
+    adventure_board.cpp
+    adventure_board.hpp
+    adventure_path.cpp
+    adventure_path.hpp
+    adventure_step.cpp
+    adventure_step.hpp
+    army_movement.cpp
+    army_movement.hpp
+    army_slots.cpp
+    army_slots.hpp
+    army_sight.cpp
+    army_sight.hpp
+    army_values.cpp
+    army_values.hpp
+    calendar.hpp
+    command.hpp
+    enemy_zones.cpp
+    enemy_zones.hpp
+    game_state.cpp
+    game_state.hpp
+    game_state_visit.cpp
+    experience.cpp
+    experience.hpp
+    inventory.cpp
+    inventory.hpp
+    income.cpp
+    income.hpp
+    map_point.hpp
+    purse.cpp
+    purse.hpp
+    shrine.cpp
+    shrine.hpp
+    step_test.cpp
+    step_test.hpp
+    town_progress.cpp
+    treasure.cpp
+    treasure.hpp
+    town_progress.hpp
+)

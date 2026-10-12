@@ -1,0 +1,11 @@
+#include "app_icon.hpp"
+
+namespace h4::root {
+
+namespace {
+const unsigned char kIconPng[] = { @H4_APP_ICON_BYTES@ };
+}
+
+std::span<const std::byte> app_icon_png() noexcept { return std::as_bytes(std::span{ kIconPng }); }
+
+}
